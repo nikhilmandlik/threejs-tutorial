@@ -1,4 +1,4 @@
-const CHAPTERS = [1,2,3];
+const CHAPTERS = [1,2,3,4];
 
 export default class ChapterLoader {
     constructor() {
@@ -16,7 +16,6 @@ export default class ChapterLoader {
             const folderName = `chapter${chapter}`
             const path = `./chapters/${folderName}/${moduleName}`;
             const show = import(`${path}`);
-            console.log(path);
 
             this.chapters.push({
                 moduleName,
@@ -25,8 +24,6 @@ export default class ChapterLoader {
             });
         });
     }
-
-
 
     loadChapterMenu() {
         const menu = document.createElement('ul');
@@ -64,7 +61,7 @@ export default class ChapterLoader {
                 console.error(`${chapter.name} does not exists`);
             });
     }
-    
+
     destroyChapter() {
         if (!this.currentChapter) {
             return;
@@ -78,6 +75,4 @@ export default class ChapterLoader {
                 console.error(`${chapter.name} does not exists`);
             });
     }
-
 }
-

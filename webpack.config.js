@@ -22,12 +22,6 @@ module.exports = {
             title: "My App",
             filename: "index.html",
         }),
-        new CopyPlugin([
-            {
-                from: path.join(__dirname, "/src/assets"),
-                to: path.join(__dirname, "/dist/assets"),
-            },
-        ]),
         new MiniCssExtractPlugin({
             filename: "[name].css",
             chunkFilename: "[name].css",
